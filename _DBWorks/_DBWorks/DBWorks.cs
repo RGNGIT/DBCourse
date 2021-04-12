@@ -69,7 +69,7 @@ namespace _DBWorks
 
         void Output(string dbTable)
         {
-            tabPage1.Text = $"Работа с БД ({dbTable})";
+            tabPage1.Text = $"Работа с БД (Таблица в базе данных: {dbTable})";
             this.sqlRequest = $"SELECT * FROM [{dbTable}]";
             OleDbDataAdapter dataAdapter = new OleDbDataAdapter(this.sqlRequest, this.CurrentConnection);
             DataSet DataSet = new DataSet();
@@ -89,10 +89,10 @@ namespace _DBWorks
             switch (tabControlAdd.SelectedIndex)
             {
                 case 0:
-                    this.sqlRequest = $"INSERT INTO [ОБЛОРГ] VALUES({int.Parse(textBoxOrgCodeAdd.Text)}, '{textBoxOrgNameAdd.Text}', '{textBoxOrgShNameAdd.Text}', '{textBoxOrgAddrAdd.Text}', '{textBoxOrgTelAdd.Text}', '{textBoxOrgEmailAdd.Text}')";
+                    this.sqlRequest = $"INSERT INTO [ОБЛОРГ] VALUES ({int.Parse(textBoxOrgCodeAdd.Text)}, '{textBoxOrgNameAdd.Text}', '{textBoxOrgShNameAdd.Text}', '{textBoxOrgAddrAdd.Text}', '{textBoxOrgTelAdd.Text}', '{textBoxOrgEmailAdd.Text}')";
                     break;
                 case 1:
-
+                    this.sqlRequest = $"INSERT INTO [СПОБЪЕКТ] VALUES ('{textBoxSpPlaceAdd.Text}', {int.Parse(textBoxSpNumAdd.Text)}, '{textBoxSpNameAdd.Text}', '{textBoxSpShNameAdd.Text}', '{textBoxSpTypeAdd.Text}', {int.Parse(textBoxSpSquareAdd.Text)}, {int.Parse(textBoxSpCapacityAdd.Text)}, '{textBoxSpOrgAdd.Text}', '{textBoxSpBalDateAdd.Text}', '{textBoxSpEventAdd.Text}')";
                     break;
                 case 2:
                     this.sqlRequest = $"INSERT INTO [МЕРОПРИЯТИЕ] VALUES ('{textBoxEventTypeAdd.Text}', '{textBoxEventNameAdd.Text}', '{textBoxEventDateAdd.Text}', {int.Parse(textBoxEventsVisitorsAdd.Text)})";
@@ -139,6 +139,7 @@ namespace _DBWorks
         private void Call_CustomSQLDBAction(object sender, EventArgs e) => CustomSQL(textBoxSQLRequest.Text);
         private void Call_DelListUpdate(object sender, EventArgs e) => Output(this.Tables[comboBoxDelList.SelectedIndex]);
         private void Call_RedListUpdate(object sender, EventArgs e) => Output(this.Tables[comboBoxRedList.SelectedIndex]);
+        private void Call_AddTab(object sender, EventArgs e) => Output(this.Tables[tabControlAdd.SelectedIndex]);
 
     }
 

@@ -79,6 +79,7 @@ namespace _DBWorks
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.comboBoxOutTable = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.tabPage7 = new System.Windows.Forms.TabPage();
@@ -93,13 +94,33 @@ namespace _DBWorks
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxOLEDBP = new System.Windows.Forms.TextBox();
-            this.comboBoxOutTable = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBoxSpPlaceAdd = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBoxSpNumAdd = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBoxSpNameAdd = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.textBoxSpShNameAdd = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.textBoxSpTypeAdd = new System.Windows.Forms.TextBox();
+            this.textBoxSpSquareAdd = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.textBoxSpCapacityAdd = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.textBoxSpOrgAdd = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.textBoxSpBalDateAdd = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.textBoxSpEventAdd = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabControlAdd.SuspendLayout();
             this.tabPage10.SuspendLayout();
+            this.tabPage11.SuspendLayout();
             this.tabPage12.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
@@ -116,7 +137,7 @@ namespace _DBWorks
             this.tabControl1.Location = new System.Drawing.Point(2, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(912, 502);
+            this.tabControl1.Size = new System.Drawing.Size(912, 524);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -126,7 +147,7 @@ namespace _DBWorks
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(904, 476);
+            this.tabPage1.Size = new System.Drawing.Size(904, 498);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Работа с БД";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -141,7 +162,7 @@ namespace _DBWorks
             this.tabControl2.Location = new System.Drawing.Point(580, 6);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(324, 470);
+            this.tabControl2.Size = new System.Drawing.Size(324, 485);
             this.tabControl2.TabIndex = 1;
             // 
             // tabPage3
@@ -151,7 +172,7 @@ namespace _DBWorks
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(316, 444);
+            this.tabPage3.Size = new System.Drawing.Size(316, 459);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Добавить";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -164,8 +185,9 @@ namespace _DBWorks
             this.tabControlAdd.Location = new System.Drawing.Point(6, 6);
             this.tabControlAdd.Name = "tabControlAdd";
             this.tabControlAdd.SelectedIndex = 0;
-            this.tabControlAdd.Size = new System.Drawing.Size(304, 403);
+            this.tabControlAdd.Size = new System.Drawing.Size(304, 418);
             this.tabControlAdd.TabIndex = 5;
+            this.tabControlAdd.SelectedIndexChanged += new System.EventHandler(this.Call_AddTab);
             // 
             // tabPage10
             // 
@@ -287,10 +309,30 @@ namespace _DBWorks
             // 
             // tabPage11
             // 
+            this.tabPage11.Controls.Add(this.textBoxSpEventAdd);
+            this.tabPage11.Controls.Add(this.label32);
+            this.tabPage11.Controls.Add(this.textBoxSpBalDateAdd);
+            this.tabPage11.Controls.Add(this.label31);
+            this.tabPage11.Controls.Add(this.textBoxSpOrgAdd);
+            this.tabPage11.Controls.Add(this.label30);
+            this.tabPage11.Controls.Add(this.textBoxSpCapacityAdd);
+            this.tabPage11.Controls.Add(this.label29);
+            this.tabPage11.Controls.Add(this.label28);
+            this.tabPage11.Controls.Add(this.textBoxSpSquareAdd);
+            this.tabPage11.Controls.Add(this.textBoxSpTypeAdd);
+            this.tabPage11.Controls.Add(this.label27);
+            this.tabPage11.Controls.Add(this.textBoxSpShNameAdd);
+            this.tabPage11.Controls.Add(this.label26);
+            this.tabPage11.Controls.Add(this.textBoxSpNameAdd);
+            this.tabPage11.Controls.Add(this.label17);
+            this.tabPage11.Controls.Add(this.textBoxSpNumAdd);
+            this.tabPage11.Controls.Add(this.label16);
+            this.tabPage11.Controls.Add(this.textBoxSpPlaceAdd);
+            this.tabPage11.Controls.Add(this.label15);
             this.tabPage11.Location = new System.Drawing.Point(4, 22);
             this.tabPage11.Name = "tabPage11";
             this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage11.Size = new System.Drawing.Size(296, 377);
+            this.tabPage11.Size = new System.Drawing.Size(296, 392);
             this.tabPage11.TabIndex = 1;
             this.tabPage11.Text = "Спорт. Объект";
             this.tabPage11.UseVisualStyleBackColor = true;
@@ -379,7 +421,7 @@ namespace _DBWorks
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(6, 415);
+            this.buttonAdd.Location = new System.Drawing.Point(6, 430);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(304, 23);
             this.buttonAdd.TabIndex = 4;
@@ -399,7 +441,7 @@ namespace _DBWorks
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(316, 444);
+            this.tabPage4.Size = new System.Drawing.Size(316, 459);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Удалить";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -420,7 +462,7 @@ namespace _DBWorks
             // 
             // buttonDel
             // 
-            this.buttonDel.Location = new System.Drawing.Point(6, 415);
+            this.buttonDel.Location = new System.Drawing.Point(6, 430);
             this.buttonDel.Name = "buttonDel";
             this.buttonDel.Size = new System.Drawing.Size(304, 23);
             this.buttonDel.TabIndex = 8;
@@ -485,7 +527,7 @@ namespace _DBWorks
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(316, 444);
+            this.tabPage5.Size = new System.Drawing.Size(316, 459);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "Редактировать";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -506,7 +548,7 @@ namespace _DBWorks
             // 
             // textBoxToEdit
             // 
-            this.textBoxToEdit.Location = new System.Drawing.Point(6, 389);
+            this.textBoxToEdit.Location = new System.Drawing.Point(6, 404);
             this.textBoxToEdit.Name = "textBoxToEdit";
             this.textBoxToEdit.Size = new System.Drawing.Size(304, 20);
             this.textBoxToEdit.TabIndex = 13;
@@ -514,7 +556,7 @@ namespace _DBWorks
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(3, 373);
+            this.label14.Location = new System.Drawing.Point(3, 388);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(89, 13);
             this.label14.TabIndex = 12;
@@ -522,7 +564,7 @@ namespace _DBWorks
             // 
             // buttonEdit
             // 
-            this.buttonEdit.Location = new System.Drawing.Point(6, 415);
+            this.buttonEdit.Location = new System.Drawing.Point(6, 430);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(304, 23);
             this.buttonEdit.TabIndex = 11;
@@ -595,14 +637,27 @@ namespace _DBWorks
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(316, 444);
+            this.tabPage6.Size = new System.Drawing.Size(316, 459);
             this.tabPage6.TabIndex = 3;
             this.tabPage6.Text = "Вывести таблицу";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
+            // comboBoxOutTable
+            // 
+            this.comboBoxOutTable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxOutTable.FormattingEnabled = true;
+            this.comboBoxOutTable.Items.AddRange(new object[] {
+            "Областные организации",
+            "Спортивные объекты",
+            "Мероприятия"});
+            this.comboBoxOutTable.Location = new System.Drawing.Point(6, 19);
+            this.comboBoxOutTable.Name = "comboBoxOutTable";
+            this.comboBoxOutTable.Size = new System.Drawing.Size(304, 21);
+            this.comboBoxOutTable.TabIndex = 15;
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(6, 415);
+            this.button1.Location = new System.Drawing.Point(6, 430);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(304, 23);
             this.button1.TabIndex = 9;
@@ -627,14 +682,14 @@ namespace _DBWorks
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(316, 444);
+            this.tabPage7.Size = new System.Drawing.Size(316, 459);
             this.tabPage7.TabIndex = 4;
             this.tabPage7.Text = "Кастомный SQL запрос";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(6, 415);
+            this.button2.Location = new System.Drawing.Point(6, 430);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(304, 23);
             this.button2.TabIndex = 9;
@@ -661,9 +716,9 @@ namespace _DBWorks
             // dataGridViewMain
             // 
             this.dataGridViewMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMain.Location = new System.Drawing.Point(0, 6);
+            this.dataGridViewMain.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewMain.Name = "dataGridViewMain";
-            this.dataGridViewMain.Size = new System.Drawing.Size(574, 469);
+            this.dataGridViewMain.Size = new System.Drawing.Size(574, 498);
             this.dataGridViewMain.TabIndex = 0;
             // 
             // tabPage2
@@ -677,7 +732,7 @@ namespace _DBWorks
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(904, 476);
+            this.tabPage2.Size = new System.Drawing.Size(904, 498);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Параметры";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -685,7 +740,7 @@ namespace _DBWorks
             // labelConnectionInfo
             // 
             this.labelConnectionInfo.AutoSize = true;
-            this.labelConnectionInfo.Location = new System.Drawing.Point(6, 431);
+            this.labelConnectionInfo.Location = new System.Drawing.Point(6, 452);
             this.labelConnectionInfo.Name = "labelConnectionInfo";
             this.labelConnectionInfo.Size = new System.Drawing.Size(50, 13);
             this.labelConnectionInfo.TabIndex = 5;
@@ -693,7 +748,7 @@ namespace _DBWorks
             // 
             // buttonApplySettings
             // 
-            this.buttonApplySettings.Location = new System.Drawing.Point(9, 447);
+            this.buttonApplySettings.Location = new System.Drawing.Point(9, 468);
             this.buttonApplySettings.Name = "buttonApplySettings";
             this.buttonApplySettings.Size = new System.Drawing.Size(318, 23);
             this.buttonApplySettings.TabIndex = 4;
@@ -733,24 +788,171 @@ namespace _DBWorks
             this.textBoxOLEDBP.Size = new System.Drawing.Size(318, 20);
             this.textBoxOLEDBP.TabIndex = 0;
             // 
-            // comboBoxOutTable
+            // label15
             // 
-            this.comboBoxOutTable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxOutTable.FormattingEnabled = true;
-            this.comboBoxOutTable.Items.AddRange(new object[] {
-            "Областные организации",
-            "Спортивные объекты",
-            "Мероприятия"});
-            this.comboBoxOutTable.Location = new System.Drawing.Point(6, 19);
-            this.comboBoxOutTable.Name = "comboBoxOutTable";
-            this.comboBoxOutTable.Size = new System.Drawing.Size(304, 21);
-            this.comboBoxOutTable.TabIndex = 15;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(0, 2);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(39, 13);
+            this.label15.TabIndex = 3;
+            this.label15.Text = "Место";
+            // 
+            // textBoxSpPlaceAdd
+            // 
+            this.textBoxSpPlaceAdd.Location = new System.Drawing.Point(3, 18);
+            this.textBoxSpPlaceAdd.Name = "textBoxSpPlaceAdd";
+            this.textBoxSpPlaceAdd.Size = new System.Drawing.Size(290, 20);
+            this.textBoxSpPlaceAdd.TabIndex = 4;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(0, 41);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(41, 13);
+            this.label16.TabIndex = 5;
+            this.label16.Text = "Номер";
+            // 
+            // textBoxSpNumAdd
+            // 
+            this.textBoxSpNumAdd.Location = new System.Drawing.Point(3, 57);
+            this.textBoxSpNumAdd.Name = "textBoxSpNumAdd";
+            this.textBoxSpNumAdd.Size = new System.Drawing.Size(290, 20);
+            this.textBoxSpNumAdd.TabIndex = 6;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(0, 80);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(57, 13);
+            this.label17.TabIndex = 7;
+            this.label17.Text = "Название";
+            // 
+            // textBoxSpNameAdd
+            // 
+            this.textBoxSpNameAdd.Location = new System.Drawing.Point(3, 96);
+            this.textBoxSpNameAdd.Name = "textBoxSpNameAdd";
+            this.textBoxSpNameAdd.Size = new System.Drawing.Size(290, 20);
+            this.textBoxSpNameAdd.TabIndex = 8;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(0, 119);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(100, 13);
+            this.label26.TabIndex = 9;
+            this.label26.Text = "Краткое название";
+            // 
+            // textBoxSpShNameAdd
+            // 
+            this.textBoxSpShNameAdd.Location = new System.Drawing.Point(3, 135);
+            this.textBoxSpShNameAdd.Name = "textBoxSpShNameAdd";
+            this.textBoxSpShNameAdd.Size = new System.Drawing.Size(290, 20);
+            this.textBoxSpShNameAdd.TabIndex = 10;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(0, 158);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(90, 13);
+            this.label27.TabIndex = 11;
+            this.label27.Text = "Тип сооружения";
+            // 
+            // textBoxSpTypeAdd
+            // 
+            this.textBoxSpTypeAdd.Location = new System.Drawing.Point(3, 174);
+            this.textBoxSpTypeAdd.Name = "textBoxSpTypeAdd";
+            this.textBoxSpTypeAdd.Size = new System.Drawing.Size(290, 20);
+            this.textBoxSpTypeAdd.TabIndex = 12;
+            // 
+            // textBoxSpSquareAdd
+            // 
+            this.textBoxSpSquareAdd.Location = new System.Drawing.Point(3, 213);
+            this.textBoxSpSquareAdd.Name = "textBoxSpSquareAdd";
+            this.textBoxSpSquareAdd.Size = new System.Drawing.Size(290, 20);
+            this.textBoxSpSquareAdd.TabIndex = 13;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(0, 197);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(54, 13);
+            this.label28.TabIndex = 14;
+            this.label28.Text = "Площадь";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(0, 236);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(76, 13);
+            this.label29.TabIndex = 15;
+            this.label29.Text = "Вместимость";
+            // 
+            // textBoxSpCapacityAdd
+            // 
+            this.textBoxSpCapacityAdd.Location = new System.Drawing.Point(3, 252);
+            this.textBoxSpCapacityAdd.Name = "textBoxSpCapacityAdd";
+            this.textBoxSpCapacityAdd.Size = new System.Drawing.Size(290, 20);
+            this.textBoxSpCapacityAdd.TabIndex = 16;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(0, 275);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(174, 13);
+            this.label30.TabIndex = 17;
+            this.label30.Text = "Организация (из существующих)";
+            // 
+            // textBoxSpOrgAdd
+            // 
+            this.textBoxSpOrgAdd.Location = new System.Drawing.Point(3, 291);
+            this.textBoxSpOrgAdd.Name = "textBoxSpOrgAdd";
+            this.textBoxSpOrgAdd.Size = new System.Drawing.Size(290, 20);
+            this.textBoxSpOrgAdd.TabIndex = 18;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(0, 314);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(137, 13);
+            this.label31.TabIndex = 19;
+            this.label31.Text = "Дата принятия на баланс";
+            // 
+            // textBoxSpBalDateAdd
+            // 
+            this.textBoxSpBalDateAdd.Location = new System.Drawing.Point(3, 330);
+            this.textBoxSpBalDateAdd.Name = "textBoxSpBalDateAdd";
+            this.textBoxSpBalDateAdd.Size = new System.Drawing.Size(290, 20);
+            this.textBoxSpBalDateAdd.TabIndex = 20;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(0, 353);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(175, 13);
+            this.label32.TabIndex = 21;
+            this.label32.Text = "Мероприятие (из существующих)";
+            // 
+            // textBoxSpEventAdd
+            // 
+            this.textBoxSpEventAdd.Location = new System.Drawing.Point(3, 369);
+            this.textBoxSpEventAdd.Name = "textBoxSpEventAdd";
+            this.textBoxSpEventAdd.Size = new System.Drawing.Size(290, 20);
+            this.textBoxSpEventAdd.TabIndex = 22;
             // 
             // DBWorks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 507);
+            this.ClientSize = new System.Drawing.Size(914, 528);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "DBWorks";
@@ -762,6 +964,8 @@ namespace _DBWorks
             this.tabControlAdd.ResumeLayout(false);
             this.tabPage10.ResumeLayout(false);
             this.tabPage10.PerformLayout();
+            this.tabPage11.ResumeLayout(false);
+            this.tabPage11.PerformLayout();
             this.tabPage12.ResumeLayout(false);
             this.tabPage12.PerformLayout();
             this.tabPage4.ResumeLayout(false);
@@ -846,6 +1050,26 @@ namespace _DBWorks
         private System.Windows.Forms.ComboBox comboBoxDelList;
         private System.Windows.Forms.ComboBox comboBoxRedList;
         private System.Windows.Forms.ComboBox comboBoxOutTable;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBoxSpPlaceAdd;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox textBoxSpSquareAdd;
+        private System.Windows.Forms.TextBox textBoxSpTypeAdd;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox textBoxSpShNameAdd;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox textBoxSpNameAdd;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox textBoxSpNumAdd;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox textBoxSpBalDateAdd;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox textBoxSpOrgAdd;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox textBoxSpCapacityAdd;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox textBoxSpEventAdd;
+        private System.Windows.Forms.Label label32;
     }
 }
 
