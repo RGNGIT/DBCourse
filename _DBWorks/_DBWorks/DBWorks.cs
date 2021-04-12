@@ -82,12 +82,23 @@ namespace _DBWorks
             command.ExecuteNonQuery();
         }
 
-        void Insert(string dbTable, string dbValues)
+        void Insert()
         {
-            this.sqlRequest = $"INSERT INTO [{dbTable}] VALUES ({dbValues})";
+            switch (tabControlAdd.SelectedIndex)
+            {
+                case 0:
+
+                    break;
+                case 1:
+
+                    break;
+                case 2:
+                    this.sqlRequest = $"INSERT INTO [МЕРОПРИЯТИЕ] VALUES ('{textBoxEventTypeAdd.Text}', '{textBoxEventNameAdd.Text}', '{textBoxEventDateAdd.Text}', {int.Parse(textBoxEventsVisitorsAdd.Text)}";
+                    break;
+            }
             OleDbCommand command = new OleDbCommand(this.sqlRequest, this.CurrentConnection);
             command.ExecuteNonQuery();
-            Output(dbTable);
+            // Output(dbTable);
         }
 
         void Delete(string dbTable, string dbKeyField, string dbKeyValue, bool isTable)
@@ -145,7 +156,7 @@ namespace _DBWorks
         // Банк вызовов
 
         private void Call_ApplySettings(object sender, EventArgs e) => SetSettings(textBoxOLEDBP.Text, textBoxDBPath.Text);
-        private void Call_InsertDBAction(object sender, EventArgs e) => Insert(textBoxAddTable.Text, textBoxAddParam.Text);
+        private void Call_InsertDBAction(object sender, EventArgs e) => Insert();
         private void Call_DeleteDBAction(object sender, EventArgs e) => Delete(textBoxDelTable.Text, textBoxDelKeyField.Text, textBoxDelKeyValue.Text, checkBoxTableDeletion.Checked);
         private void Call_EditDBAction(object sender, EventArgs e) => Edit(textBoxEditTable.Text, textBoxEditTab.Text, textBoxEditKeyField.Text, textBoxEditKeyValue.Text, textBoxToEdit.Text);
         private void Call_OutputDBAction(object sender, EventArgs e) => Output(textBoxOut.Text);

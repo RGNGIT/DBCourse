@@ -34,10 +34,10 @@ namespace _DBWorks
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.textBoxAddParam = new System.Windows.Forms.TextBox();
+            this.textBoxEventNameAdd = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxAddTable = new System.Windows.Forms.TextBox();
+            this.textBoxEventTypeAdd = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.checkBoxTableDeletion = new System.Windows.Forms.CheckBox();
             this.buttonDel = new System.Windows.Forms.Button();
@@ -88,6 +88,14 @@ namespace _DBWorks
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxOLEDBP = new System.Windows.Forms.TextBox();
+            this.tabControlAdd = new System.Windows.Forms.TabControl();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textBoxEventDateAdd = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.textBoxEventsVisitorsAdd = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -100,6 +108,8 @@ namespace _DBWorks
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.tabControlAdd.SuspendLayout();
+            this.tabPage12.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -141,11 +151,8 @@ namespace _DBWorks
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.tabControlAdd);
             this.tabPage3.Controls.Add(this.buttonAdd);
-            this.tabPage3.Controls.Add(this.textBoxAddParam);
-            this.tabPage3.Controls.Add(this.label4);
-            this.tabPage3.Controls.Add(this.label3);
-            this.tabPage3.Controls.Add(this.textBoxAddTable);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -164,37 +171,37 @@ namespace _DBWorks
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.Call_InsertDBAction);
             // 
-            // textBoxAddParam
+            // textBoxEventNameAdd
             // 
-            this.textBoxAddParam.Location = new System.Drawing.Point(6, 58);
-            this.textBoxAddParam.Name = "textBoxAddParam";
-            this.textBoxAddParam.Size = new System.Drawing.Size(304, 20);
-            this.textBoxAddParam.TabIndex = 3;
+            this.textBoxEventNameAdd.Location = new System.Drawing.Point(3, 57);
+            this.textBoxEventNameAdd.Name = "textBoxEventNameAdd";
+            this.textBoxEventNameAdd.Size = new System.Drawing.Size(290, 20);
+            this.textBoxEventNameAdd.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 42);
+            this.label4.Location = new System.Drawing.Point(0, 41);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(196, 13);
+            this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Параметры универсального запроса";
+            this.label4.Text = "Название";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 3);
+            this.label3.Location = new System.Drawing.Point(0, 2);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 13);
+            this.label3.Size = new System.Drawing.Size(26, 13);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Таблица";
+            this.label3.Text = "Тип";
             // 
-            // textBoxAddTable
+            // textBoxEventTypeAdd
             // 
-            this.textBoxAddTable.Location = new System.Drawing.Point(6, 19);
-            this.textBoxAddTable.Name = "textBoxAddTable";
-            this.textBoxAddTable.Size = new System.Drawing.Size(304, 20);
-            this.textBoxAddTable.TabIndex = 0;
+            this.textBoxEventTypeAdd.Location = new System.Drawing.Point(3, 18);
+            this.textBoxEventTypeAdd.Name = "textBoxEventTypeAdd";
+            this.textBoxEventTypeAdd.Size = new System.Drawing.Size(290, 20);
+            this.textBoxEventTypeAdd.TabIndex = 0;
             // 
             // tabPage4
             // 
@@ -673,6 +680,87 @@ namespace _DBWorks
             this.textBoxOLEDBP.Size = new System.Drawing.Size(318, 20);
             this.textBoxOLEDBP.TabIndex = 0;
             // 
+            // tabControlAdd
+            // 
+            this.tabControlAdd.Controls.Add(this.tabPage10);
+            this.tabControlAdd.Controls.Add(this.tabPage11);
+            this.tabControlAdd.Controls.Add(this.tabPage12);
+            this.tabControlAdd.Location = new System.Drawing.Point(6, 6);
+            this.tabControlAdd.Name = "tabControlAdd";
+            this.tabControlAdd.SelectedIndex = 0;
+            this.tabControlAdd.Size = new System.Drawing.Size(304, 403);
+            this.tabControlAdd.TabIndex = 5;
+            // 
+            // tabPage10
+            // 
+            this.tabPage10.Location = new System.Drawing.Point(4, 22);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage10.Size = new System.Drawing.Size(232, 115);
+            this.tabPage10.TabIndex = 0;
+            this.tabPage10.Text = "Обл. Организация";
+            this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // tabPage11
+            // 
+            this.tabPage11.Location = new System.Drawing.Point(4, 22);
+            this.tabPage11.Name = "tabPage11";
+            this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage11.Size = new System.Drawing.Size(232, 115);
+            this.tabPage11.TabIndex = 1;
+            this.tabPage11.Text = "Спорт. Объект";
+            this.tabPage11.UseVisualStyleBackColor = true;
+            // 
+            // tabPage12
+            // 
+            this.tabPage12.Controls.Add(this.textBoxEventsVisitorsAdd);
+            this.tabPage12.Controls.Add(this.label19);
+            this.tabPage12.Controls.Add(this.textBoxEventDateAdd);
+            this.tabPage12.Controls.Add(this.label18);
+            this.tabPage12.Controls.Add(this.textBoxEventTypeAdd);
+            this.tabPage12.Controls.Add(this.label3);
+            this.tabPage12.Controls.Add(this.textBoxEventNameAdd);
+            this.tabPage12.Controls.Add(this.label4);
+            this.tabPage12.Location = new System.Drawing.Point(4, 22);
+            this.tabPage12.Name = "tabPage12";
+            this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage12.Size = new System.Drawing.Size(296, 377);
+            this.tabPage12.TabIndex = 2;
+            this.tabPage12.Text = "Мероприятие";
+            this.tabPage12.UseVisualStyleBackColor = true;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(0, 80);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(129, 13);
+            this.label18.TabIndex = 4;
+            this.label18.Text = "Дата начала/окончания";
+            // 
+            // textBoxEventDateAdd
+            // 
+            this.textBoxEventDateAdd.Location = new System.Drawing.Point(3, 96);
+            this.textBoxEventDateAdd.Name = "textBoxEventDateAdd";
+            this.textBoxEventDateAdd.Size = new System.Drawing.Size(290, 20);
+            this.textBoxEventDateAdd.TabIndex = 5;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(0, 119);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(108, 13);
+            this.label19.TabIndex = 6;
+            this.label19.Text = "Кол-во посетителей";
+            // 
+            // textBoxEventsVisitorsAdd
+            // 
+            this.textBoxEventsVisitorsAdd.Location = new System.Drawing.Point(3, 135);
+            this.textBoxEventsVisitorsAdd.Name = "textBoxEventsVisitorsAdd";
+            this.textBoxEventsVisitorsAdd.Size = new System.Drawing.Size(290, 20);
+            this.textBoxEventsVisitorsAdd.TabIndex = 7;
+            // 
             // DBWorks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -687,7 +775,6 @@ namespace _DBWorks
             this.tabPage1.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
@@ -702,6 +789,9 @@ namespace _DBWorks
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabControlAdd.ResumeLayout(false);
+            this.tabPage12.ResumeLayout(false);
+            this.tabPage12.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -722,8 +812,8 @@ namespace _DBWorks
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxAddTable;
-        private System.Windows.Forms.TextBox textBoxAddParam;
+        private System.Windows.Forms.TextBox textBoxEventTypeAdd;
+        private System.Windows.Forms.TextBox textBoxEventNameAdd;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.TabPage tabPage5;
@@ -767,6 +857,14 @@ namespace _DBWorks
         private System.Windows.Forms.Button buttonAddTTable;
         private System.Windows.Forms.Button buttonAddTToRequest;
         private System.Windows.Forms.PictureBox pictureBoxSQLRequest;
+        private System.Windows.Forms.TabControl tabControlAdd;
+        private System.Windows.Forms.TabPage tabPage10;
+        private System.Windows.Forms.TabPage tabPage11;
+        private System.Windows.Forms.TabPage tabPage12;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox textBoxEventDateAdd;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox textBoxEventsVisitorsAdd;
     }
 }
 
