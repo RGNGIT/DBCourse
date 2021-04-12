@@ -19,7 +19,7 @@ namespace _DBWorks
         {
             InitializeComponent();
             labelConnectionInfo.Text = String.Empty;
-            textBoxDBPath.Text = "Database.mdb";
+            textBoxDBPath.Text = "DB_Course.mdb";
             textBoxOLEDBP.Text = "Microsoft.Jet.OLEDB.4.0";
         }
 
@@ -93,7 +93,7 @@ namespace _DBWorks
 
                     break;
                 case 2:
-                    this.sqlRequest = $"INSERT INTO [МЕРОПРИЯТИЕ] VALUES ('{textBoxEventTypeAdd.Text}', '{textBoxEventNameAdd.Text}', '{textBoxEventDateAdd.Text}', {int.Parse(textBoxEventsVisitorsAdd.Text)}";
+                    this.sqlRequest = $"INSERT INTO [МЕРОПРИЯТИЕ] VALUES ('{textBoxEventTypeAdd.Text}', '{textBoxEventNameAdd.Text}', '{textBoxEventDateAdd.Text}', {int.Parse(textBoxEventsVisitorsAdd.Text)})";
                     break;
             }
             OleDbCommand command = new OleDbCommand(this.sqlRequest, this.CurrentConnection);
@@ -105,7 +105,7 @@ namespace _DBWorks
         {
             if (!isTable)
             {
-                this.sqlRequest = $"DELETE FROM [{dbTable}] WHERE {dbKeyField} = {dbKeyValue}";
+                this.sqlRequest = $"DELETE FROM [{dbTable}] WHERE {dbKeyField} = '{dbKeyValue}'";
                 OleDbCommand command = new OleDbCommand(this.sqlRequest, this.CurrentConnection);
                 command.ExecuteNonQuery();
                 Output(dbTable);
