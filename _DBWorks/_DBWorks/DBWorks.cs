@@ -25,6 +25,7 @@ namespace _DBWorks
 
         public static string DBConnectionProperties;
         public OleDbConnection CurrentConnection = null;
+        List<string> Tables = new List<string>() { "ОБЛОРГ", "СПОБЪЕКТ", "МЕРОПРИЯТИЕ" };
 
         // Параметры/Подключение БД
 
@@ -68,6 +69,7 @@ namespace _DBWorks
 
         void Output(string dbTable)
         {
+            tabPage1.Text = $"Работа с БД ({dbTable})";
             this.sqlRequest = $"SELECT * FROM [{dbTable}]";
             OleDbDataAdapter dataAdapter = new OleDbDataAdapter(this.sqlRequest, this.CurrentConnection);
             DataSet DataSet = new DataSet();
@@ -87,7 +89,7 @@ namespace _DBWorks
             switch (tabControlAdd.SelectedIndex)
             {
                 case 0:
-
+                    this.sqlRequest = $"INSERT INTO [ОБЛОРГ] VALUES({int.Parse(textBoxOrgCodeAdd.Text)}, '{textBoxOrgNameAdd.Text}', '{textBoxOrgShNameAdd.Text}', '{textBoxOrgAddrAdd.Text}', '{textBoxOrgTelAdd.Text}', '{textBoxOrgEmailAdd.Text}')";
                     break;
                 case 1:
 
@@ -98,79 +100,46 @@ namespace _DBWorks
             }
             OleDbCommand command = new OleDbCommand(this.sqlRequest, this.CurrentConnection);
             command.ExecuteNonQuery();
-            // Output(dbTable);
+            Output(this.Tables[tabControlAdd.SelectedIndex]);
         }
 
-        void Delete(string dbTable, string dbKeyField, string dbKeyValue, bool isTable)
+        void Delete(int dbTable, string dbKeyField, string dbKeyValue)
         {
-            if (!isTable)
+            try
             {
-                this.sqlRequest = $"DELETE FROM [{dbTable}] WHERE {dbKeyField} = '{dbKeyValue}'";
+                this.sqlRequest = $"DELETE FROM [{this.Tables[dbTable]}] WHERE {dbKeyField} = '{dbKeyValue}'";
                 OleDbCommand command = new OleDbCommand(this.sqlRequest, this.CurrentConnection);
                 command.ExecuteNonQuery();
-                Output(dbTable);
+                Output(this.Tables[dbTable]);
             }
-            else
+            catch (OleDbException)
             {
-                this.sqlRequest = $"DROP TABLE [{dbTable}]";
+                this.sqlRequest = $"DELETE FROM [{this.Tables[dbTable]}] WHERE {dbKeyField} = {dbKeyValue}";
                 OleDbCommand command = new OleDbCommand(this.sqlRequest, this.CurrentConnection);
                 command.ExecuteNonQuery();
+                Output(this.Tables[dbTable]);
             }
         }
 
-        void Edit(string dbTable, string dbTab, string dbKeyField, string dbKeyValue, string dbEditValue)
+        void Edit(int dbTable, string dbTab, string dbKeyField, string dbKeyValue, string dbEditValue)
         {
-            this.sqlRequest = $"UPDATE [{dbTable}] SET [{dbTab}] = {dbEditValue} WHERE {dbKeyField} = {dbKeyValue}";
+            this.sqlRequest = $"UPDATE [{this.Tables[dbTable]}] SET [{dbTab}] = {dbEditValue} WHERE {dbKeyField} = {dbKeyValue}";
             OleDbCommand command = new OleDbCommand(this.sqlRequest, this.CurrentConnection);
             command.ExecuteNonQuery();
-            Output(dbTable);
+            Output(this.Tables[dbTable]);
         }
-
-        void AddTableSQLAssembly(string dbTableName, string dbTabName, string varType, bool notNull)
-        {
-
-        }
-
-        void AddTable()
-        {
-
-        }
-
-        void ClearRequest()
-        {
-
-        }
-
-        private void SQLRequestOutputDraw(object sender, PaintEventArgs e)
-        {
-            using (Font font = new Font("Arial", 10))
-            {
-                e.Graphics.DrawString(this.sqlRequest, font, Brushes.Black, new Point(2, 2));
-            }
-        }
-
-        // Работа со схемами данных
-
-
 
         // Банк вызовов
 
         private void Call_ApplySettings(object sender, EventArgs e) => SetSettings(textBoxOLEDBP.Text, textBoxDBPath.Text);
         private void Call_InsertDBAction(object sender, EventArgs e) => Insert();
-        private void Call_DeleteDBAction(object sender, EventArgs e) => Delete(textBoxDelTable.Text, textBoxDelKeyField.Text, textBoxDelKeyValue.Text, checkBoxTableDeletion.Checked);
-        private void Call_EditDBAction(object sender, EventArgs e) => Edit(textBoxEditTable.Text, textBoxEditTab.Text, textBoxEditKeyField.Text, textBoxEditKeyValue.Text, textBoxToEdit.Text);
-        private void Call_OutputDBAction(object sender, EventArgs e) => Output(textBoxOut.Text);
+        private void Call_DeleteDBAction(object sender, EventArgs e) => Delete(comboBoxDelList.SelectedIndex, textBoxDelKeyField.Text, textBoxDelKeyValue.Text);
+        private void Call_EditDBAction(object sender, EventArgs e) => Edit(comboBoxRedList.SelectedIndex, textBoxEditTab.Text, textBoxEditKeyField.Text, textBoxEditKeyValue.Text, textBoxToEdit.Text);
+        private void Call_OutputDBAction(object sender, EventArgs e) => Output(this.Tables[comboBoxOutTable.SelectedIndex]);
         private void Call_CustomSQLDBAction(object sender, EventArgs e) => CustomSQL(textBoxSQLRequest.Text);
+        private void Call_DelListUpdate(object sender, EventArgs e) => Output(this.Tables[comboBoxDelList.SelectedIndex]);
+        private void Call_RedListUpdate(object sender, EventArgs e) => Output(this.Tables[comboBoxRedList.SelectedIndex]);
 
-        private void buttonAddTToRequest_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DBWorks_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 
 }

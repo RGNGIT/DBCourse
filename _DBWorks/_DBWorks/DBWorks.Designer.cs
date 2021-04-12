@@ -35,6 +35,18 @@ namespace _DBWorks
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabControlAdd = new System.Windows.Forms.TabControl();
             this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.textBoxOrgEmailAdd = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.textBoxOrgTelAdd = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.textBoxOrgAddrAdd = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.textBoxOrgShNameAdd = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.textBoxOrgNameAdd = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.textBoxOrgCodeAdd = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.tabPage11 = new System.Windows.Forms.TabPage();
             this.tabPage12 = new System.Windows.Forms.TabPage();
             this.textBoxEventsVisitorsAdd = new System.Windows.Forms.TextBox();
@@ -47,15 +59,15 @@ namespace _DBWorks
             this.label4 = new System.Windows.Forms.Label();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.checkBoxTableDeletion = new System.Windows.Forms.CheckBox();
+            this.comboBoxDelList = new System.Windows.Forms.ComboBox();
             this.buttonDel = new System.Windows.Forms.Button();
             this.textBoxDelKeyValue = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxDelKeyField = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBoxDelTable = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.comboBoxRedList = new System.Windows.Forms.ComboBox();
             this.textBoxToEdit = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.buttonEdit = new System.Windows.Forms.Button();
@@ -65,25 +77,10 @@ namespace _DBWorks
             this.label12 = new System.Windows.Forms.Label();
             this.textBoxEditTab = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBoxEditTable = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBoxOut = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.pictureBoxSQLRequest = new System.Windows.Forms.PictureBox();
-            this.buttonAddTToRequest = new System.Windows.Forms.Button();
-            this.buttonAddTTable = new System.Windows.Forms.Button();
-            this.checkBoxAddTKey = new System.Windows.Forms.CheckBox();
-            this.checkBoxAddTNotNull = new System.Windows.Forms.CheckBox();
-            this.textBoxAddTType = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBoxAddTTab = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBoxAddTTableName = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
             this.textBoxSQLRequest = new System.Windows.Forms.TextBox();
@@ -96,7 +93,7 @@ namespace _DBWorks
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxOLEDBP = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
+            this.comboBoxOutTable = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -107,8 +104,6 @@ namespace _DBWorks
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
-            this.tabPage9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSQLRequest)).BeginInit();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
             this.tabPage2.SuspendLayout();
@@ -142,8 +137,6 @@ namespace _DBWorks
             this.tabControl2.Controls.Add(this.tabPage4);
             this.tabControl2.Controls.Add(this.tabPage5);
             this.tabControl2.Controls.Add(this.tabPage6);
-            this.tabControl2.Controls.Add(this.tabPage9);
-            this.tabControl2.Controls.Add(this.tabPage8);
             this.tabControl2.Controls.Add(this.tabPage7);
             this.tabControl2.Location = new System.Drawing.Point(580, 6);
             this.tabControl2.Name = "tabControl2";
@@ -176,6 +169,17 @@ namespace _DBWorks
             // 
             // tabPage10
             // 
+            this.tabPage10.Controls.Add(this.textBoxOrgEmailAdd);
+            this.tabPage10.Controls.Add(this.label25);
+            this.tabPage10.Controls.Add(this.textBoxOrgTelAdd);
+            this.tabPage10.Controls.Add(this.label24);
+            this.tabPage10.Controls.Add(this.textBoxOrgAddrAdd);
+            this.tabPage10.Controls.Add(this.label23);
+            this.tabPage10.Controls.Add(this.textBoxOrgShNameAdd);
+            this.tabPage10.Controls.Add(this.label22);
+            this.tabPage10.Controls.Add(this.textBoxOrgNameAdd);
+            this.tabPage10.Controls.Add(this.label21);
+            this.tabPage10.Controls.Add(this.textBoxOrgCodeAdd);
             this.tabPage10.Controls.Add(this.label20);
             this.tabPage10.Location = new System.Drawing.Point(4, 22);
             this.tabPage10.Name = "tabPage10";
@@ -184,6 +188,102 @@ namespace _DBWorks
             this.tabPage10.TabIndex = 0;
             this.tabPage10.Text = "Обл. Организация";
             this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // textBoxOrgEmailAdd
+            // 
+            this.textBoxOrgEmailAdd.Location = new System.Drawing.Point(3, 213);
+            this.textBoxOrgEmailAdd.Name = "textBoxOrgEmailAdd";
+            this.textBoxOrgEmailAdd.Size = new System.Drawing.Size(290, 20);
+            this.textBoxOrgEmailAdd.TabIndex = 13;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(0, 197);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(53, 13);
+            this.label25.TabIndex = 12;
+            this.label25.Text = "Эл.Почта";
+            // 
+            // textBoxOrgTelAdd
+            // 
+            this.textBoxOrgTelAdd.Location = new System.Drawing.Point(3, 174);
+            this.textBoxOrgTelAdd.Name = "textBoxOrgTelAdd";
+            this.textBoxOrgTelAdd.Size = new System.Drawing.Size(290, 20);
+            this.textBoxOrgTelAdd.TabIndex = 11;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(0, 158);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(52, 13);
+            this.label24.TabIndex = 10;
+            this.label24.Text = "Телефон";
+            // 
+            // textBoxOrgAddrAdd
+            // 
+            this.textBoxOrgAddrAdd.Location = new System.Drawing.Point(3, 135);
+            this.textBoxOrgAddrAdd.Name = "textBoxOrgAddrAdd";
+            this.textBoxOrgAddrAdd.Size = new System.Drawing.Size(290, 20);
+            this.textBoxOrgAddrAdd.TabIndex = 9;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(0, 119);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(38, 13);
+            this.label23.TabIndex = 8;
+            this.label23.Text = "Адрес";
+            // 
+            // textBoxOrgShNameAdd
+            // 
+            this.textBoxOrgShNameAdd.Location = new System.Drawing.Point(3, 96);
+            this.textBoxOrgShNameAdd.Name = "textBoxOrgShNameAdd";
+            this.textBoxOrgShNameAdd.Size = new System.Drawing.Size(290, 20);
+            this.textBoxOrgShNameAdd.TabIndex = 7;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(0, 80);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(100, 13);
+            this.label22.TabIndex = 6;
+            this.label22.Text = "Краткое название";
+            // 
+            // textBoxOrgNameAdd
+            // 
+            this.textBoxOrgNameAdd.Location = new System.Drawing.Point(3, 57);
+            this.textBoxOrgNameAdd.Name = "textBoxOrgNameAdd";
+            this.textBoxOrgNameAdd.Size = new System.Drawing.Size(290, 20);
+            this.textBoxOrgNameAdd.TabIndex = 5;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(0, 41);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(57, 13);
+            this.label21.TabIndex = 4;
+            this.label21.Text = "Название";
+            // 
+            // textBoxOrgCodeAdd
+            // 
+            this.textBoxOrgCodeAdd.Location = new System.Drawing.Point(3, 18);
+            this.textBoxOrgCodeAdd.Name = "textBoxOrgCodeAdd";
+            this.textBoxOrgCodeAdd.Size = new System.Drawing.Size(290, 20);
+            this.textBoxOrgCodeAdd.TabIndex = 3;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(0, 2);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(26, 13);
+            this.label20.TabIndex = 2;
+            this.label20.Text = "Код";
             // 
             // tabPage11
             // 
@@ -289,13 +389,12 @@ namespace _DBWorks
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.checkBoxTableDeletion);
+            this.tabPage4.Controls.Add(this.comboBoxDelList);
             this.tabPage4.Controls.Add(this.buttonDel);
             this.tabPage4.Controls.Add(this.textBoxDelKeyValue);
             this.tabPage4.Controls.Add(this.label7);
             this.tabPage4.Controls.Add(this.textBoxDelKeyField);
             this.tabPage4.Controls.Add(this.label6);
-            this.tabPage4.Controls.Add(this.textBoxDelTable);
             this.tabPage4.Controls.Add(this.label5);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
@@ -305,15 +404,19 @@ namespace _DBWorks
             this.tabPage4.Text = "Удалить";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // checkBoxTableDeletion
+            // comboBoxDelList
             // 
-            this.checkBoxTableDeletion.AutoSize = true;
-            this.checkBoxTableDeletion.Location = new System.Drawing.Point(7, 123);
-            this.checkBoxTableDeletion.Name = "checkBoxTableDeletion";
-            this.checkBoxTableDeletion.Size = new System.Drawing.Size(121, 17);
-            this.checkBoxTableDeletion.TabIndex = 9;
-            this.checkBoxTableDeletion.Text = "Удаляем таблицу?";
-            this.checkBoxTableDeletion.UseVisualStyleBackColor = true;
+            this.comboBoxDelList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxDelList.FormattingEnabled = true;
+            this.comboBoxDelList.Items.AddRange(new object[] {
+            "Областные организации",
+            "Спортивные объекты",
+            "Мероприятия"});
+            this.comboBoxDelList.Location = new System.Drawing.Point(6, 18);
+            this.comboBoxDelList.Name = "comboBoxDelList";
+            this.comboBoxDelList.Size = new System.Drawing.Size(304, 21);
+            this.comboBoxDelList.TabIndex = 9;
+            this.comboBoxDelList.SelectedIndexChanged += new System.EventHandler(this.Call_DelListUpdate);
             // 
             // buttonDel
             // 
@@ -357,13 +460,6 @@ namespace _DBWorks
             this.label6.TabIndex = 4;
             this.label6.Text = "Ключевое поле";
             // 
-            // textBoxDelTable
-            // 
-            this.textBoxDelTable.Location = new System.Drawing.Point(6, 19);
-            this.textBoxDelTable.Name = "textBoxDelTable";
-            this.textBoxDelTable.Size = new System.Drawing.Size(304, 20);
-            this.textBoxDelTable.TabIndex = 3;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -375,6 +471,7 @@ namespace _DBWorks
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.comboBoxRedList);
             this.tabPage5.Controls.Add(this.textBoxToEdit);
             this.tabPage5.Controls.Add(this.label14);
             this.tabPage5.Controls.Add(this.buttonEdit);
@@ -384,7 +481,6 @@ namespace _DBWorks
             this.tabPage5.Controls.Add(this.label12);
             this.tabPage5.Controls.Add(this.textBoxEditTab);
             this.tabPage5.Controls.Add(this.label11);
-            this.tabPage5.Controls.Add(this.textBoxEditTable);
             this.tabPage5.Controls.Add(this.label10);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
@@ -393,6 +489,20 @@ namespace _DBWorks
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "Редактировать";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxRedList
+            // 
+            this.comboBoxRedList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxRedList.FormattingEnabled = true;
+            this.comboBoxRedList.Items.AddRange(new object[] {
+            "Областные организации",
+            "Спортивные объекты",
+            "Мероприятия"});
+            this.comboBoxRedList.Location = new System.Drawing.Point(6, 19);
+            this.comboBoxRedList.Name = "comboBoxRedList";
+            this.comboBoxRedList.Size = new System.Drawing.Size(304, 21);
+            this.comboBoxRedList.TabIndex = 14;
+            this.comboBoxRedList.SelectedIndexChanged += new System.EventHandler(this.Call_RedListUpdate);
             // 
             // textBoxToEdit
             // 
@@ -468,13 +578,6 @@ namespace _DBWorks
             this.label11.TabIndex = 5;
             this.label11.Text = "Столбец для редактирования";
             // 
-            // textBoxEditTable
-            // 
-            this.textBoxEditTable.Location = new System.Drawing.Point(6, 19);
-            this.textBoxEditTable.Name = "textBoxEditTable";
-            this.textBoxEditTable.Size = new System.Drawing.Size(304, 20);
-            this.textBoxEditTable.TabIndex = 4;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -486,8 +589,8 @@ namespace _DBWorks
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.comboBoxOutTable);
             this.tabPage6.Controls.Add(this.button1);
-            this.tabPage6.Controls.Add(this.textBoxOut);
             this.tabPage6.Controls.Add(this.label8);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
@@ -507,13 +610,6 @@ namespace _DBWorks
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Call_OutputDBAction);
             // 
-            // textBoxOut
-            // 
-            this.textBoxOut.Location = new System.Drawing.Point(6, 19);
-            this.textBoxOut.Name = "textBoxOut";
-            this.textBoxOut.Size = new System.Drawing.Size(304, 20);
-            this.textBoxOut.TabIndex = 4;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -522,133 +618,6 @@ namespace _DBWorks
             this.label8.Size = new System.Drawing.Size(50, 13);
             this.label8.TabIndex = 3;
             this.label8.Text = "Таблица";
-            // 
-            // tabPage9
-            // 
-            this.tabPage9.Controls.Add(this.pictureBoxSQLRequest);
-            this.tabPage9.Controls.Add(this.buttonAddTToRequest);
-            this.tabPage9.Controls.Add(this.buttonAddTTable);
-            this.tabPage9.Controls.Add(this.checkBoxAddTKey);
-            this.tabPage9.Controls.Add(this.checkBoxAddTNotNull);
-            this.tabPage9.Controls.Add(this.textBoxAddTType);
-            this.tabPage9.Controls.Add(this.label17);
-            this.tabPage9.Controls.Add(this.textBoxAddTTab);
-            this.tabPage9.Controls.Add(this.label16);
-            this.tabPage9.Controls.Add(this.textBoxAddTTableName);
-            this.tabPage9.Controls.Add(this.label15);
-            this.tabPage9.Location = new System.Drawing.Point(4, 22);
-            this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(316, 444);
-            this.tabPage9.TabIndex = 6;
-            this.tabPage9.Text = "Добавить таблицу";
-            this.tabPage9.UseVisualStyleBackColor = true;
-            // 
-            // pictureBoxSQLRequest
-            // 
-            this.pictureBoxSQLRequest.Location = new System.Drawing.Point(7, 169);
-            this.pictureBoxSQLRequest.Name = "pictureBoxSQLRequest";
-            this.pictureBoxSQLRequest.Size = new System.Drawing.Size(303, 211);
-            this.pictureBoxSQLRequest.TabIndex = 14;
-            this.pictureBoxSQLRequest.TabStop = false;
-            this.pictureBoxSQLRequest.Paint += new System.Windows.Forms.PaintEventHandler(this.SQLRequestOutputDraw);
-            // 
-            // buttonAddTToRequest
-            // 
-            this.buttonAddTToRequest.Location = new System.Drawing.Point(6, 386);
-            this.buttonAddTToRequest.Name = "buttonAddTToRequest";
-            this.buttonAddTToRequest.Size = new System.Drawing.Size(304, 23);
-            this.buttonAddTToRequest.TabIndex = 13;
-            this.buttonAddTToRequest.Text = "Добавить в запрос";
-            this.buttonAddTToRequest.UseVisualStyleBackColor = true;
-            this.buttonAddTToRequest.Click += new System.EventHandler(this.buttonAddTToRequest_Click);
-            // 
-            // buttonAddTTable
-            // 
-            this.buttonAddTTable.Location = new System.Drawing.Point(6, 415);
-            this.buttonAddTTable.Name = "buttonAddTTable";
-            this.buttonAddTTable.Size = new System.Drawing.Size(304, 23);
-            this.buttonAddTTable.TabIndex = 12;
-            this.buttonAddTTable.Text = "Добавить таблицу";
-            this.buttonAddTTable.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxAddTKey
-            // 
-            this.checkBoxAddTKey.AutoSize = true;
-            this.checkBoxAddTKey.Location = new System.Drawing.Point(7, 146);
-            this.checkBoxAddTKey.Name = "checkBoxAddTKey";
-            this.checkBoxAddTKey.Size = new System.Drawing.Size(109, 17);
-            this.checkBoxAddTKey.TabIndex = 11;
-            this.checkBoxAddTKey.Text = "Ключевое поле?";
-            this.checkBoxAddTKey.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxAddTNotNull
-            // 
-            this.checkBoxAddTNotNull.AutoSize = true;
-            this.checkBoxAddTNotNull.Location = new System.Drawing.Point(7, 123);
-            this.checkBoxAddTNotNull.Name = "checkBoxAddTNotNull";
-            this.checkBoxAddTNotNull.Size = new System.Drawing.Size(77, 17);
-            this.checkBoxAddTNotNull.TabIndex = 10;
-            this.checkBoxAddTNotNull.Text = "Не NULL?";
-            this.checkBoxAddTNotNull.UseVisualStyleBackColor = true;
-            // 
-            // textBoxAddTType
-            // 
-            this.textBoxAddTType.Location = new System.Drawing.Point(6, 97);
-            this.textBoxAddTType.Name = "textBoxAddTType";
-            this.textBoxAddTType.Size = new System.Drawing.Size(304, 20);
-            this.textBoxAddTType.TabIndex = 9;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(3, 81);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(66, 13);
-            this.label17.TabIndex = 8;
-            this.label17.Text = "Тип данных";
-            // 
-            // textBoxAddTTab
-            // 
-            this.textBoxAddTTab.Location = new System.Drawing.Point(6, 58);
-            this.textBoxAddTTab.Name = "textBoxAddTTab";
-            this.textBoxAddTTab.Size = new System.Drawing.Size(304, 20);
-            this.textBoxAddTTab.TabIndex = 7;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(3, 42);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(43, 13);
-            this.label16.TabIndex = 6;
-            this.label16.Text = "Стобец";
-            // 
-            // textBoxAddTTableName
-            // 
-            this.textBoxAddTTableName.Location = new System.Drawing.Point(6, 19);
-            this.textBoxAddTTableName.Name = "textBoxAddTTableName";
-            this.textBoxAddTTableName.Size = new System.Drawing.Size(304, 20);
-            this.textBoxAddTTableName.TabIndex = 5;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(3, 3);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(50, 13);
-            this.label15.TabIndex = 4;
-            this.label15.Text = "Таблица";
-            // 
-            // tabPage8
-            // 
-            this.tabPage8.Location = new System.Drawing.Point(4, 22);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(316, 444);
-            this.tabPage8.TabIndex = 5;
-            this.tabPage8.Text = "Схема данных";
-            this.tabPage8.UseVisualStyleBackColor = true;
             // 
             // tabPage7
             // 
@@ -764,14 +733,18 @@ namespace _DBWorks
             this.textBoxOLEDBP.Size = new System.Drawing.Size(318, 20);
             this.textBoxOLEDBP.TabIndex = 0;
             // 
-            // label20
+            // comboBoxOutTable
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(3, 3);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(26, 13);
-            this.label20.TabIndex = 2;
-            this.label20.Text = "Тип";
+            this.comboBoxOutTable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxOutTable.FormattingEnabled = true;
+            this.comboBoxOutTable.Items.AddRange(new object[] {
+            "Областные организации",
+            "Спортивные объекты",
+            "Мероприятия"});
+            this.comboBoxOutTable.Location = new System.Drawing.Point(6, 19);
+            this.comboBoxOutTable.Name = "comboBoxOutTable";
+            this.comboBoxOutTable.Size = new System.Drawing.Size(304, 21);
+            this.comboBoxOutTable.TabIndex = 15;
             // 
             // DBWorks
             // 
@@ -782,7 +755,6 @@ namespace _DBWorks
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "DBWorks";
             this.Text = "SQL редактор ";
-            this.Load += new System.EventHandler(this.DBWorks_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
@@ -798,9 +770,6 @@ namespace _DBWorks
             this.tabPage5.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
-            this.tabPage9.ResumeLayout(false);
-            this.tabPage9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSQLRequest)).EndInit();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).EndInit();
@@ -835,18 +804,15 @@ namespace _DBWorks
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.TextBox textBoxDelKeyField;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBoxDelTable;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonDel;
         private System.Windows.Forms.TextBox textBoxDelKeyValue;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBoxOut;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBoxSQLRequest;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBoxEditTable;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.TextBox textBoxEditKeyValue;
@@ -857,20 +823,6 @@ namespace _DBWorks
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBoxToEdit;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.CheckBox checkBoxTableDeletion;
-        private System.Windows.Forms.TabPage tabPage8;
-        private System.Windows.Forms.TabPage tabPage9;
-        private System.Windows.Forms.TextBox textBoxAddTTableName;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBoxAddTTab;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBoxAddTType;
-        private System.Windows.Forms.CheckBox checkBoxAddTNotNull;
-        private System.Windows.Forms.CheckBox checkBoxAddTKey;
-        private System.Windows.Forms.Button buttonAddTTable;
-        private System.Windows.Forms.Button buttonAddTToRequest;
-        private System.Windows.Forms.PictureBox pictureBoxSQLRequest;
         private System.Windows.Forms.TabControl tabControlAdd;
         private System.Windows.Forms.TabPage tabPage10;
         private System.Windows.Forms.TabPage tabPage11;
@@ -880,6 +832,20 @@ namespace _DBWorks
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox textBoxEventsVisitorsAdd;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox textBoxOrgCodeAdd;
+        private System.Windows.Forms.TextBox textBoxOrgAddrAdd;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox textBoxOrgShNameAdd;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox textBoxOrgNameAdd;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox textBoxOrgEmailAdd;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox textBoxOrgTelAdd;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.ComboBox comboBoxDelList;
+        private System.Windows.Forms.ComboBox comboBoxRedList;
+        private System.Windows.Forms.ComboBox comboBoxOutTable;
     }
 }
 
